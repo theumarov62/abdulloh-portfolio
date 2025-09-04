@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="frame-ancestors 'none'"
+    />
+    <title>Abdulloh Umarovning | Portfolio</title>
+
+    <!-- AOS  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- STYLES  -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- <link rel="stylesheet" href="css/css.min.css"> -->
+  </head>
+  <body>
+    <!-- LOADER -->
+    <div class="lds-spinner-wrapper">
+      <div class="lds-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <!-- SITE-HEADER  -->
+    <header class="site-header">
+      <div class="container site-header__container">
+        <!-- HAMBURGER  -->
+        <section class="hamburger site-header__hamburger">
+          <h2 class="visually-hidden">Hamburger menu</h2>
+          <button
+            class="hamburger__bar js-hamburger-toggle"
+            type="button"
+            aria-label="Open projects list"
+          >
+            <span class="hamburger__bar-inner">
+              <svg
+                class="hamburger__img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"
+                />
+              </svg>
+            </span>
+          </button>
+
+          <!-- SITE NAVIGATOR  -->
+          <nav class="sitenav hamburger__sitenav js-hamburger">
+            <ul class="sitenav__list">
+              <li class="sitenav__item">
+                <a class="sitenav__link js-id" tabindex="-1" href="#akademnashr"
+                  >Akademnashr</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </section>
+
+        <div class="site-header__img-content-wrapper">
+          <img
+            class="site-header__img"
+            src=""
+            alt="Img None"
+            width="150"
+            height="150"
+          />
+          <div class="site-header__content">
+            <p class="site-header__text">Abdulloh <i>Umarov</i></p>
+            <p class="site-header__project-name">Frontend dasturchi</p>
+            <div class="site-header__link-wrapper">
+              <a
+                class="site-header__link site-header__link--github"
+                href=""
+                target="_blank"
+                >GitHub</a
+              >
+              <a
+                class="site-header__link site-header__link--telegram"
+                href=""
+                target="_blank"
+                >Telegram</a
+              >
+              <a class="site-header__link site-header__link--phone" href=""
+                >Telefon</a
+              >
+            </div>
+
+            <!-- SOCIAL -->
+            <ul class="social">
+              <!-- GITHUB  -->
+              <li class="social__item">
+                <a class="social__link" target="_blank">
+                  <img
+                    class="social__img"
+                    src="img/social/github.svg"
+                    alt="GitHub"
+                    width="45"
+                    height="45"
+                  />
+                </a>
+              </li>
+
+              <!-- TELEGRAM  -->
+              <li class="social__item">
+                <a class="social__link" target="_blank">
+                  <img
+                    class="social__img"
+                    src="img/social/telegram.svg"
+                    alt="Telegram"
+                    width="45"
+                    height="45"
+                  />
+                </a>
+              </li>
+
+              <!-- PHONE -->
+              <li class="social__item">
+                <a class="social__link">
+                  <img
+                    class="social__img"
+                    src="img/social/phone.svg"
+                    alt="Phone"
+                    width="45"
+                    height="45"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TOGGLE  -->
+        <button class="toggler site-header__toggler js-toggle" type="button">
+          <img
+            class="toggler__img toggler__img--moon toggler__img--active"
+            src="img/moon-solid.svg"
+            alt="Light/Dark mode toggler"
+            width="30"
+            height="30"
+          />
+          <img
+            class="toggler__img toggler__img--sun"
+            src="img/sun-solid.svg"
+            alt="Light/Dark mode toggler"
+            width="30"
+            height="30"
+          />
+        </button>
+      </div>
+    </header>
+
+    <div id="site-top"></div>
+    <main class="main-content">
+      <section class="section-projects">
+        <div class="container section-projects__container">
+          <div class="sectio-projects__content">
+            <h2 class="section-projects__title">Loyihalar</h2>
+            <p class="section-projects__description">
+              Har bir loyiha haqida batafsil ma'lumot, undagi sahifalar
+              rasmlari, ketkazilgan vaqt va loyiha tuzilishi jarayonida duch
+              kelingan murakkab nuqtalar
+              <a class="section-projects__description-link" href="#minimalist"
+                >Batafsil</a
+              >
+              havolasi ostida berilgan bo'lib, mualliflik huquqlariga binoan
+              to'g'ridan-to'g'ri loyiha manbasiga havola oshkor etilmadi.
+            </p>
+          </div>
+          <ul class="projects">
+            <!-- Don Don ziki -->
+            <li class="projects__item" data-aos="fade-up" id="akademnashr">
+              <img
+                class="projects__img"
+                src="img/projects/project_1_img.png"
+                alt="akademnashr"
+                width="1440"
+                height="674"
+              />
+              <div class="projects__inner">
+                <h3 class="projects__title">Don don ziki</h3>
+                <p class="projects__info">
+                  Yoshlikdagi tosh qaychi qog'oz o'ynini internetda o'ynab
+                  ko'ring. <br />
+                  Iltimos undan oldin saytdagi muammolarni o'qing...
+                </p>
+                <div class="project-links">
+                  <a
+                    class="project-links__link project-links__link--more"
+                    href="./pages/rock-scissors-paper.html"
+                    >Batafsil</a
+                  >
+                  <a
+                    class="project-links__link project-links__link--github"
+                    href="https://github.com/theumarov62/4-oy-4-dars"
+                    target="_blank"
+                    >GitHub</a
+                  >
+                  <a
+                    class="project-links__link project-links__link--netlify"
+                    href="https://rock-paper-scissors-abdulloh.netlify.app"
+                    target="_blank"
+                    >Netlify</a
+                  >
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- SCROLL  -->
+    <a class="scroll-site-top js-scroll" href="#site-top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path
+          d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM382.6 254.6c-12.5 12.5-32.75 12.5-45.25 0L288 205.3V384c0 17.69-14.33 32-32 32s-32-14.31-32-32V205.3L174.6 254.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l103.1-103.1C241.3 97.4 251.1 96 256 96c4.881 0 14.65 1.391 22.65 9.398l103.1 103.1C395.1 221.9 395.1 242.1 382.6 254.6z"
+        />
+      </svg>
+    </a>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
