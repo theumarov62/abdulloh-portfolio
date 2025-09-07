@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App - Code Explanation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        color: #333;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1,
+      h2 {
+        color: #222;
+      }
+      section {
+        margin-bottom: 30px;
+      }
+      pre {
+        background: #1e1e1e;
+        color: #9cdcfe;
+        padding: 15px;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+      p {
+        margin-top: 8px;
+        font-size: 14px;
+        background: #fff;
+        padding: 10px;
+        border-left: 4px solid #007acc;
+        border-radius: 4px;
+      }
+      code {
+        background: #eee;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-size: 13px;
+      }
+
+      .home-page {
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        padding: 5px;
+        border-radius: 5px;
+        z-index: 10;
+        position: fixed;
+        top: 10px;
+        right: 20px;
+        transition: 0.2s;
+        border: 2px solid transparent;
+      }
+
+      .home-page:hover {
+        background-color: white;
+        color: black;
+        border-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="../index.html" class="home-page">Asosiy Sahifa</a>
+    <h1>📌 Todo App – Code Explanation</h1>
+
+    <!-- index.html -->
+    <section>
+      <h2>index.html</h2>
+      <pre>
+&lt;ul id="todosContainer"&gt;&lt;/ul&gt;
+
+&lt;input type="text" id="inputAdd" /&gt;
+&lt;!-- Title kiritish uchun input --&gt;
+
+&lt;input type="text" id="inputDescAdd" /&gt;
+&lt;!-- Description kiritish uchun input --&gt;
+
+&lt;button id="add"&gt;Add&lt;/button&gt;
+&lt;!-- Yangi todo qo‘shish tugmasi --&gt;
+    </pre
+      >
+      <p>
+        Bu faylda foydalanuvchi interfeysi (inputlar va tugmalar) bor.
+        Shuningdek, <code>&lt;template&gt;</code> orqali har bir todo uchun
+        tayyor dizayn yozilgan.
+      </p>
+    </section>
+
+    <!-- html-elements.js -->
+    <section>
+      <h2>html-elements.js</h2>
+      <pre>
+const elCardTemplate = document.getElementById("cardTemplate");
+const elTodosContainer = document.getElementById("todosContainer");
+const elAddButton = document.getElementById("add");
+const elInputAdd = document.getElementById("inputAdd");
+const elErrorTextInput = document.getElementById("errorTextInput");
+const elInputDescAdd = document.getElementById("inputDescAdd");
+    </pre
+      >
+      <p>
+        Bu faylda <code>document.getElementById</code> orqali HTML elementlari
+        olinadi va boshqa fayllarda ishlatish uchun export qilinadi.
+      </p>
+    </section>
+
+    <!-- crud.js -->
+    <section>
+      <h2>crud.js</h2>
+      <pre>
+export function addTodo(title, description) {
+  const newTodo = {
+    title,
+    description,
+    isCompleted: false,
+    id: Date.now(),
+  };
+  todos.push(newTodo);
+  changeTodos(todos);
+}
+    </pre
+      >
+      <p>
+        CRUD funksiyalari shu faylda. Masalan, <code>addTodo</code> yangi todo
+        yaratadi, <code>deleteTodo</code> esa todo ni o‘chiradi.
+      </p>
+    </section>
+
+    <!-- ui-changer.js -->
+    <section>
+      <h2>ui-changer.js</h2>
+      <pre>
+export function uiChanger(todos) {
+  elTodosContainer.innerHTML = "";
+  todos.forEach((element) =&gt; {
+    const clone = elCardTemplate.content.cloneNode(true);
+    clone.querySelector("h5").innerText = element.title;
+    clone.querySelector("p").innerText = element.description;
+    elTodosContainer.append(clone);
+  });
+}
+    </pre
+      >
+      <p>
+        Bu funksiya ekranda todolarni ko‘rsatadi. Har bir todo uchun template
+        klon qilinadi va ro‘yxatga qo‘shiladi.
+      </p>
+    </section>
+
+    <!-- todos.js -->
+    <section>
+      <h2>todos.js</h2>
+      <pre>
+export let todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+export function changeTodos(newTodos) {
+  todos = newTodos;
+  localStorage.setItem("todos", JSON.stringify(todos));
+  uiChanger(todos);
+}
+    </pre
+      >
+      <p>
+        Barcha todolar array ko‘rinishida shu yerda saqlanadi.
+        <code>localStorage</code> ishlatilgani uchun sahifa yangilanganda ham
+        ma’lumotlar o‘chib ketmaydi.
+      </p>
+    </section>
+  </body>
+</html>
